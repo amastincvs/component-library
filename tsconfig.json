@@ -1,0 +1,21 @@
+{
+  "extends": "tsconfig/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "strictNullChecks": true
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "src",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".next/types/**/*.ts"
+  ]
+}
