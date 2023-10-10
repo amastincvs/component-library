@@ -2,11 +2,19 @@
   "extends": "tsconfig/react.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     },
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     ".eslintrc.cjs",

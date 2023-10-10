@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "playground": "next dev",
     "build": "pnpm build:tailwind && pnpm bundle",
     "bundle": "tsup src/index.ts --format esm,cjs --dts --external react",
     "build:tailwind": "tailwindcss -i ./src/styles/globals.css -o src/styles/dist.css",
@@ -33,6 +34,7 @@
     "@tabler/icons-react": "^2.30.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "next": "^13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.14.0"
