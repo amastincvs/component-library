@@ -94,6 +94,14 @@ __export(src_exports, {
   SelectTrigger: () => SelectTrigger,
   SelectValue: () => SelectValue,
   Switch: () => Switch,
+  Table: () => Table,
+  TableBody: () => TableBody,
+  TableCaption: () => TableCaption,
+  TableCell: () => TableCell,
+  TableFooter: () => TableFooter,
+  TableHead: () => TableHead,
+  TableHeader: () => TableHeader,
+  TableRow: () => TableRow,
   Tabs: () => Tabs,
   TabsContent: () => TabsContent,
   TabsList: () => TabsList,
@@ -1015,12 +1023,90 @@ var Switch = React12.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
 ));
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
-// src/components/Tabs/index.tsx
+// src/components/Table/index.tsx
 var React13 = __toESM(require("react"));
-var TabsPrimitive = __toESM(require("@radix-ui/react-tabs"));
 var import_jsx_runtime14 = require("react/jsx-runtime");
+var Table = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "relative w-full overflow-auto", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "table",
+  {
+    ref,
+    className: cn("w-full caption-bottom text-sm", className),
+    ...props
+  }
+) }));
+Table.displayName = "Table";
+var TableHeader = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("thead", { ref, className: cn("[&_tr]:border-b", className), ...props }));
+TableHeader.displayName = "TableHeader";
+var TableBody = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "tbody",
+  {
+    ref,
+    className: cn("[&_tr:last-child]:border-0", className),
+    ...props
+  }
+));
+TableBody.displayName = "TableBody";
+var TableFooter = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "tfoot",
+  {
+    ref,
+    className: cn("bg-primary font-medium text-primary-foreground", className),
+    ...props
+  }
+));
+TableFooter.displayName = "TableFooter";
+var TableRow = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "tr",
+  {
+    ref,
+    className: cn(
+      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      className
+    ),
+    ...props
+  }
+));
+TableRow.displayName = "TableRow";
+var TableHead = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "th",
+  {
+    ref,
+    className: cn(
+      "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className
+    ),
+    ...props
+  }
+));
+TableHead.displayName = "TableHead";
+var TableCell = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "td",
+  {
+    ref,
+    className: cn(
+      "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className
+    ),
+    ...props
+  }
+));
+TableCell.displayName = "TableCell";
+var TableCaption = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "caption",
+  {
+    ref,
+    className: cn("mt-4 text-sm text-muted-foreground", className),
+    ...props
+  }
+));
+TableCaption.displayName = "TableCaption";
+
+// src/components/Tabs/index.tsx
+var React14 = __toESM(require("react"));
+var TabsPrimitive = __toESM(require("@radix-ui/react-tabs"));
+var import_jsx_runtime15 = require("react/jsx-runtime");
 var Tabs = TabsPrimitive.Root;
-var TabsList = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+var TabsList = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
   TabsPrimitive.List,
   {
     ref,
@@ -1032,7 +1118,7 @@ var TabsList = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
-var TabsTrigger = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+var TabsTrigger = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
   TabsPrimitive.Trigger,
   {
     ref,
@@ -1044,7 +1130,7 @@ var TabsTrigger = React13.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
-var TabsContent = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+var TabsContent = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
   TabsPrimitive.Content,
   {
     ref,
@@ -1058,11 +1144,11 @@ var TabsContent = React13.forwardRef(({ className, ...props }, ref) => /* @__PUR
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 // src/components/Textarea/index.tsx
-var React14 = __toESM(require("react"));
-var import_jsx_runtime15 = require("react/jsx-runtime");
-var Textarea = React14.forwardRef(
+var React15 = __toESM(require("react"));
+var import_jsx_runtime16 = require("react/jsx-runtime");
+var Textarea = React15.forwardRef(
   ({ className, ...props }, ref) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
       "textarea",
       {
         className: cn(
@@ -1078,13 +1164,13 @@ var Textarea = React14.forwardRef(
 Textarea.displayName = "Textarea";
 
 // src/components/Toast/index.tsx
-var React15 = __toESM(require("react"));
+var React16 = __toESM(require("react"));
 var import_icons_react8 = require("@tabler/icons-react");
 var ToastPrimitives = __toESM(require("@radix-ui/react-toast"));
 var import_class_variance_authority4 = require("class-variance-authority");
-var import_jsx_runtime16 = require("react/jsx-runtime");
+var import_jsx_runtime17 = require("react/jsx-runtime");
 var ToastProvider = ToastPrimitives.Provider;
-var ToastViewport = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var ToastViewport = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
   ToastPrimitives.Viewport,
   {
     ref,
@@ -1110,8 +1196,8 @@ var toastVariants = (0, import_class_variance_authority4.cva)(
     }
   }
 );
-var Toast = React15.forwardRef(({ className, variant, ...props }, ref) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var Toast = React16.forwardRef(({ className, variant, ...props }, ref) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
     ToastPrimitives.Root,
     {
       ref,
@@ -1121,7 +1207,7 @@ var Toast = React15.forwardRef(({ className, variant, ...props }, ref) => {
   );
 });
 Toast.displayName = ToastPrimitives.Root.displayName;
-var ToastAction = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var ToastAction = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
   ToastPrimitives.Action,
   {
     ref,
@@ -1133,7 +1219,7 @@ var ToastAction = React15.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 ToastAction.displayName = ToastPrimitives.Action.displayName;
-var ToastClose = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var ToastClose = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
   ToastPrimitives.Close,
   {
     ref,
@@ -1143,11 +1229,11 @@ var ToastClose = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE
     ),
     "toast-close": "",
     ...props,
-    children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_icons_react8.IconX, { className: "h-4 w-4" })
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_icons_react8.IconX, { className: "h-4 w-4" })
   }
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;
-var ToastTitle = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var ToastTitle = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
   ToastPrimitives.Title,
   {
     ref,
@@ -1156,7 +1242,7 @@ var ToastTitle = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE
   }
 ));
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
-var ToastDescription = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+var ToastDescription = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
   ToastPrimitives.Description,
   {
     ref,
@@ -1167,7 +1253,7 @@ var ToastDescription = React15.forwardRef(({ className, ...props }, ref) => /* @
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 // src/hooks/use-toast.ts
-var React16 = __toESM(require("react"));
+var React17 = __toESM(require("react"));
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1269,8 +1355,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = React16.useState(memoryState);
-  React16.useEffect(() => {
+  const [state, setState] = React17.useState(memoryState);
+  React17.useEffect(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1287,39 +1373,39 @@ function useToast() {
 }
 
 // src/components/Toaster/index.tsx
-var import_jsx_runtime17 = require("react/jsx-runtime");
+var import_jsx_runtime18 = require("react/jsx-runtime");
 function Toaster() {
   const { toasts } = useToast();
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(ToastProvider, { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(ToastProvider, { children: [
     toasts.map(function({ id, title, description, action, ...props }) {
-      return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(
+      return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(
         Toast,
         {
           ...props,
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "grid gap-1", children: [
-              title && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ToastTitle, { children: title }),
-              description && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ToastDescription, { children: description })
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "grid gap-1", children: [
+              title && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ToastTitle, { children: title }),
+              description && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ToastDescription, { children: description })
             ] }),
             action,
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ToastClose, {})
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ToastClose, {})
           ]
         },
         id
       );
     }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ToastViewport, {})
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ToastViewport, {})
   ] });
 }
 
 // src/components/Tooltip/index.tsx
-var React17 = __toESM(require("react"));
+var React18 = __toESM(require("react"));
 var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
-var import_jsx_runtime18 = require("react/jsx-runtime");
+var import_jsx_runtime19 = require("react/jsx-runtime");
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React17.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+var TooltipContent = React18.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
   TooltipPrimitive.Content,
   {
     ref,
@@ -1335,7 +1421,7 @@ TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 // src/context/ThemeProvider/index.tsx
 var import_react = require("react");
-var import_jsx_runtime19 = require("react/jsx-runtime");
+var import_jsx_runtime20 = require("react/jsx-runtime");
 var initialState = {
   theme: "light",
   setTheme: () => null
@@ -1368,7 +1454,7 @@ function ThemeProvider({
       }
     }
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
     ThemeProviderContext.Provider,
     {
       ...props,
@@ -1451,6 +1537,14 @@ var useTheme = () => {
   SelectTrigger,
   SelectValue,
   Switch,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
   Tabs,
   TabsContent,
   TabsList,
