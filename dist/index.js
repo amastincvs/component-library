@@ -77,7 +77,7 @@ __export(src_exports, {
   DropdownMenuSubContent: () => DropdownMenuSubContent,
   DropdownMenuSubTrigger: () => DropdownMenuSubTrigger,
   DropdownMenuTrigger: () => DropdownMenuTrigger,
-  Form: () => import_react_hook_form.FormProvider,
+  Form: () => Form,
   FormControl: () => FormControl,
   FormDescription: () => FormDescription,
   FormField: () => FormField,
@@ -643,6 +643,7 @@ DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
 var React8 = __toESM(require("react"));
 var import_react_slot2 = require("@radix-ui/react-slot");
 var import_react_hook_form = require("react-hook-form");
+var Form = import_react_hook_form.FormProvider;
 var FormFieldContext = React8.createContext(
   {}
 );
