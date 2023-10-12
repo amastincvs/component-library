@@ -517,7 +517,6 @@ import {
   FormProvider,
   useFormContext
 } from "react-hook-form";
-var Form = FormProvider;
 var FormFieldContext = React8.createContext(
   {}
 );
@@ -1440,7 +1439,7 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-  Form,
+  FormProvider as Form,
   FormControl,
   FormDescription,
   FormField,
