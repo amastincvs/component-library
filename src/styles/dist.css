@@ -763,10 +763,6 @@ body {
   height: 2.25rem;
 }
 
-.h-\[1px\] {
-  height: 1px;
-}
-
 .h-\[20px\] {
   height: 20px;
 }
@@ -809,10 +805,6 @@ body {
 
 .w-9 {
   width: 2.25rem;
-}
-
-.w-\[1px\] {
-  width: 1px;
 }
 
 .w-\[36px\] {
