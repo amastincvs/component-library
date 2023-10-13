@@ -928,10 +928,31 @@ var SelectSeparator = React13.forwardRef(({ className, ...props }, ref) => /* @_
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
-// src/components/Switch/index.tsx
+// src/components/Separator/index.tsx
 import * as React14 from "react";
+import * as SeparatorPrimitive from "@radix-ui/react-separator";
+var Separator4 = React14.forwardRef(
+  ({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ React14.createElement(
+    SeparatorPrimitive.Root,
+    {
+      ref,
+      decorative,
+      orientation,
+      className: cn(
+        "shrink-0 bg-border",
+        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+        className
+      ),
+      ...props
+    }
+  )
+);
+Separator4.displayName = SeparatorPrimitive.Root.displayName;
+
+// src/components/Switch/index.tsx
+import * as React15 from "react";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
-var Switch = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React14.createElement(
+var Switch = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
   SwitchPrimitives.Root,
   {
     className: cn(
@@ -941,7 +962,7 @@ var Switch = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
     ...props,
     ref
   },
-  /* @__PURE__ */ React14.createElement(
+  /* @__PURE__ */ React15.createElement(
     SwitchPrimitives.Thumb,
     {
       className: cn(
@@ -953,8 +974,8 @@ var Switch = React14.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
 // src/components/Table/index.tsx
-import * as React15 from "react";
-var Table = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement("div", { className: "relative w-full overflow-auto" }, /* @__PURE__ */ React15.createElement(
+import * as React16 from "react";
+var Table = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement("div", { className: "relative w-full overflow-auto" }, /* @__PURE__ */ React16.createElement(
   "table",
   {
     ref,
@@ -963,7 +984,7 @@ var Table = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */
   }
 )));
 Table.displayName = "Table";
-var TableHeader = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableHeader = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "thead",
   {
     ref,
@@ -972,7 +993,7 @@ var TableHeader = React15.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TableHeader.displayName = "TableHeader";
-var TableBody = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableBody = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "tbody",
   {
     ref,
@@ -981,7 +1002,7 @@ var TableBody = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableBody.displayName = "TableBody";
-var TableFooter = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableFooter = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "tfoot",
   {
     ref,
@@ -990,7 +1011,7 @@ var TableFooter = React15.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TableFooter.displayName = "TableFooter";
-var TableRow = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableRow = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "tr",
   {
     ref,
@@ -1002,7 +1023,7 @@ var TableRow = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TableRow.displayName = "TableRow";
-var TableHead = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableHead = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "th",
   {
     ref,
@@ -1014,7 +1035,7 @@ var TableHead = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableHead.displayName = "TableHead";
-var TableCell = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableCell = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "td",
   {
     ref,
@@ -1026,7 +1047,7 @@ var TableCell = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableCell.displayName = "TableCell";
-var TableCaption = React15.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React15.createElement(
+var TableCaption = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
   "caption",
   {
     ref,
@@ -1037,10 +1058,10 @@ var TableCaption = React15.forwardRef(({ className, ...props }, ref) => /* @__PU
 TableCaption.displayName = "TableCaption";
 
 // src/components/Tabs/index.tsx
-import * as React16 from "react";
+import * as React17 from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 var Tabs = TabsPrimitive.Root;
-var TabsList = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
+var TabsList = React17.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React17.createElement(
   TabsPrimitive.List,
   {
     ref,
@@ -1052,7 +1073,7 @@ var TabsList = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
-var TabsTrigger = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
+var TabsTrigger = React17.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React17.createElement(
   TabsPrimitive.Trigger,
   {
     ref,
@@ -1064,7 +1085,7 @@ var TabsTrigger = React16.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
-var TabsContent = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React16.createElement(
+var TabsContent = React17.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React17.createElement(
   TabsPrimitive.Content,
   {
     ref,
@@ -1078,10 +1099,10 @@ var TabsContent = React16.forwardRef(({ className, ...props }, ref) => /* @__PUR
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 // src/components/Textarea/index.tsx
-import * as React17 from "react";
-var Textarea = React17.forwardRef(
+import * as React18 from "react";
+var Textarea = React18.forwardRef(
   ({ className, ...props }, ref) => {
-    return /* @__PURE__ */ React17.createElement(
+    return /* @__PURE__ */ React18.createElement(
       "textarea",
       {
         className: cn(
@@ -1097,12 +1118,12 @@ var Textarea = React17.forwardRef(
 Textarea.displayName = "Textarea";
 
 // src/components/Toast/index.tsx
-import * as React18 from "react";
+import * as React19 from "react";
 import { IconX as IconX2 } from "@tabler/icons-react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva as cva4 } from "class-variance-authority";
 var ToastProvider = ToastPrimitives.Provider;
-var ToastViewport = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
+var ToastViewport = React19.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React19.createElement(
   ToastPrimitives.Viewport,
   {
     ref,
@@ -1128,8 +1149,8 @@ var toastVariants = cva4(
     }
   }
 );
-var Toast = React18.forwardRef(({ className, variant, ...props }, ref) => {
-  return /* @__PURE__ */ React18.createElement(
+var Toast = React19.forwardRef(({ className, variant, ...props }, ref) => {
+  return /* @__PURE__ */ React19.createElement(
     ToastPrimitives.Root,
     {
       ref,
@@ -1139,7 +1160,7 @@ var Toast = React18.forwardRef(({ className, variant, ...props }, ref) => {
   );
 });
 Toast.displayName = ToastPrimitives.Root.displayName;
-var ToastAction = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
+var ToastAction = React19.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React19.createElement(
   ToastPrimitives.Action,
   {
     ref,
@@ -1151,7 +1172,7 @@ var ToastAction = React18.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 ToastAction.displayName = ToastPrimitives.Action.displayName;
-var ToastClose = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
+var ToastClose = React19.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React19.createElement(
   ToastPrimitives.Close,
   {
     ref,
@@ -1162,10 +1183,10 @@ var ToastClose = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE
     "toast-close": "",
     ...props
   },
-  /* @__PURE__ */ React18.createElement(IconX2, { className: "h-4 w-4" })
+  /* @__PURE__ */ React19.createElement(IconX2, { className: "h-4 w-4" })
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;
-var ToastTitle = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
+var ToastTitle = React19.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React19.createElement(
   ToastPrimitives.Title,
   {
     ref,
@@ -1174,7 +1195,7 @@ var ToastTitle = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE
   }
 ));
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
-var ToastDescription = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
+var ToastDescription = React19.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React19.createElement(
   ToastPrimitives.Description,
   {
     ref,
@@ -1185,7 +1206,7 @@ var ToastDescription = React18.forwardRef(({ className, ...props }, ref) => /* @
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 // src/hooks/use-toast.ts
-import * as React19 from "react";
+import * as React20 from "react";
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1287,8 +1308,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = React19.useState(memoryState);
-  React19.useEffect(() => {
+  const [state, setState] = React20.useState(memoryState);
+  React20.useEffect(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1322,12 +1343,12 @@ function Toaster() {
 }
 
 // src/components/Tooltip/index.tsx
-import * as React20 from "react";
+import * as React21 from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React20.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React20.createElement(
+var TooltipContent = React21.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React21.createElement(
   TooltipPrimitive.Content,
   {
     ref,
@@ -1463,6 +1484,7 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
+  Separator4 as Separator,
   Switch,
   Table,
   TableBody,
