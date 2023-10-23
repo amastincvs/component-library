@@ -831,14 +831,14 @@ body {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.pl-11 {
+  padding-left: 2.75rem;
+}
 .pl-2 {
   padding-left: 0.5rem;
 }
 .pl-8 {
   padding-left: 2rem;
-}
-.pl-9 {
-  padding-left: 2.25rem;
 }
 .pr-2 {
   padding-right: 0.5rem;
@@ -1521,8 +1521,14 @@ body {
 .\[\&\>svg\]\:absolute > svg {
   position: absolute;
 }
-.\[\&\>svg\]\:left-9 > svg {
-  left: 2.25rem;
+.\[\&\>svg\]\:left-4 > svg {
+  left: 1rem;
+}
+.\[\&\>svg\]\:h-5 > svg {
+  height: 1.25rem;
+}
+.\[\&\>svg\]\:w-5 > svg {
+  width: 1.25rem;
 }
 .\[\&_tr\:last-child\]\:border-0 tr:last-child {
   border-width: 0px;
@@ -2364,14 +2370,14 @@ body {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.pl-11 {
+  padding-left: 2.75rem;
+}
 .pl-2 {
   padding-left: 0.5rem;
 }
 .pl-8 {
   padding-left: 2rem;
-}
-.pl-9 {
-  padding-left: 2.25rem;
 }
 .pr-2 {
   padding-right: 0.5rem;
@@ -3054,8 +3060,14 @@ body {
 .\[\&\>svg\]\:absolute > svg {
   position: absolute;
 }
-.\[\&\>svg\]\:left-9 > svg {
-  left: 2.25rem;
+.\[\&\>svg\]\:left-4 > svg {
+  left: 1rem;
+}
+.\[\&\>svg\]\:h-5 > svg {
+  height: 1.25rem;
+}
+.\[\&\>svg\]\:w-5 > svg {
+  width: 1.25rem;
 }
 .\[\&_tr\:last-child\]\:border-0 tr:last-child {
   border-width: 0px;
