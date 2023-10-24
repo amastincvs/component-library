@@ -13,7 +13,7 @@ const Input = React.forwardRef<
     <div
       className={cn(
         props.icon
-          ? 'relative flex items-center [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5'
+          ? 'relative flex items-center hover:text-card-foreground [&>input]:text-current [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-current'
           : undefined
       )}
     >
