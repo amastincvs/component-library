@@ -926,7 +926,7 @@ var Input = React11.forwardRef(({ className, type, ...props }, ref) => {
     "div",
     {
       className: cn(
-        props.icon ? "relative flex items-center hover:text-card-foreground [&>input]:text-current [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-current" : void 0
+        props.icon ? "relative flex items-center hover:!text-primary [&:has(input:invalid)]:text-muted-foreground [&:has(input:valid)]:text-primary [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:transition-all" : void 0
       )
     },
     props.icon ?? null,
