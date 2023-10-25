@@ -1314,8 +1314,11 @@ var ToastDescription = React22.forwardRef(({ className, ...props }, ref) => /* @
 ));
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
+// src/components/Toaster/index.tsx
+import * as React24 from "react";
+
 // src/hooks/use-toast.ts
-import { useEffect, useState } from "react";
+import * as React23 from "react";
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1417,8 +1420,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = useState(memoryState);
-  useEffect(() => {
+  const [state, setState] = React23.useState(memoryState);
+  React23.useEffect(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1437,27 +1440,27 @@ function useToast() {
 // src/components/Toaster/index.tsx
 function Toaster() {
   const { toasts } = useToast();
-  return /* @__PURE__ */ React.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
-    return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React24.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
+    return /* @__PURE__ */ React24.createElement(
       Toast,
       {
         key: id,
         ...props
       },
-      /* @__PURE__ */ React.createElement("div", { className: "grid gap-1" }, title && /* @__PURE__ */ React.createElement(ToastTitle, null, title), description && /* @__PURE__ */ React.createElement(ToastDescription, null, description)),
+      /* @__PURE__ */ React24.createElement("div", { className: "grid gap-1" }, title && /* @__PURE__ */ React24.createElement(ToastTitle, null, title), description && /* @__PURE__ */ React24.createElement(ToastDescription, null, description)),
       action,
-      /* @__PURE__ */ React.createElement(ToastClose, null)
+      /* @__PURE__ */ React24.createElement(ToastClose, null)
     );
-  }), /* @__PURE__ */ React.createElement(ToastViewport, null));
+  }), /* @__PURE__ */ React24.createElement(ToastViewport, null));
 }
 
 // src/components/Tooltip/index.tsx
-import * as React23 from "react";
+import * as React25 from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React23.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React23.createElement(
+var TooltipContent = React25.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React25.createElement(
   TooltipPrimitive.Content,
   {
     ref,
