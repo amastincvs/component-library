@@ -885,6 +885,10 @@ body {
   cursor: default;
 }
 
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1530,8 +1534,13 @@ body {
   background-color: hsl(var(--secondary) / 0.8);
 }
 
-.hover\:\!text-primary:hover {
-  color: hsl(var(--primary)) !important;
+.hover\:\!text-muted-foreground:hover {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.hover\:\!text-red-500:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(239 68 68 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:text-accent-foreground:hover {
@@ -2016,8 +2025,9 @@ body {
   color: hsl(var(--muted-foreground));
 }
 
-.\[\&\:has\(input\:valid\)\]\:text-primary:has(input:valid) {
-  color: hsl(var(--primary));
+.\[\&\:has\(input\:valid\)\]\:text-red-500:has(input:valid) {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .\[\&\>\[role\=checkbox\]\]\:translate-y-\[2px\]>[role=checkbox] {
