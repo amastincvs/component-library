@@ -1448,7 +1448,7 @@ var ToastDescription = React22.forwardRef(({ className, ...props }, ref) => /* @
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 // src/hooks/use-toast.ts
-var React23 = __toESM(require("react"));
+var import_react = require("react");
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1550,8 +1550,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = React23.useState(memoryState);
-  React23.useEffect(() => {
+  const [state, setState] = (0, import_react.useState)(memoryState);
+  (0, import_react.useEffect)(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1585,12 +1585,12 @@ function Toaster() {
 }
 
 // src/components/Tooltip/index.tsx
-var React24 = __toESM(require("react"));
+var React23 = __toESM(require("react"));
 var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React24.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React24.createElement(
+var TooltipContent = React23.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   TooltipPrimitive.Content,
   {
     ref,
@@ -1605,21 +1605,21 @@ var TooltipContent = React24.forwardRef(({ className, sideOffset = 4, ...props }
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 // src/context/ThemeProvider/index.tsx
-var import_react = require("react");
+var import_react2 = require("react");
 var initialState = {
   theme: "light",
   setTheme: () => null
 };
-var ThemeProviderContext = (0, import_react.createContext)(initialState);
+var ThemeProviderContext = (0, import_react2.createContext)(initialState);
 function ThemeProvider({
   children,
   defaultTheme = "light",
   ...props
 }) {
-  const [theme, setTheme] = (0, import_react.useState)(
+  const [theme, setTheme] = (0, import_react2.useState)(
     () => typeof window !== "undefined" ? localStorage.getItem(props.storageKey) || defaultTheme : defaultTheme
   );
-  (0, import_react.useEffect)(() => {
+  (0, import_react2.useEffect)(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
     if (theme === "system") {
@@ -1649,9 +1649,9 @@ function ThemeProvider({
 }
 
 // src/hooks/use-theme.ts
-var import_react2 = require("react");
+var import_react3 = require("react");
 var useTheme = () => {
-  const context = (0, import_react2.useContext)(ThemeProviderContext);
+  const context = (0, import_react3.useContext)(ThemeProviderContext);
   if (context === void 0)
     throw new Error("useTheme must be used within a ThemeProvider");
   return context;

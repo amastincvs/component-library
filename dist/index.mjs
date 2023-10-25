@@ -1315,7 +1315,7 @@ var ToastDescription = React22.forwardRef(({ className, ...props }, ref) => /* @
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 // src/hooks/use-toast.ts
-import * as React23 from "react";
+import { useEffect, useState } from "react";
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1417,8 +1417,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = React23.useState(memoryState);
-  React23.useEffect(() => {
+  const [state, setState] = useState(memoryState);
+  useEffect(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1452,12 +1452,12 @@ function Toaster() {
 }
 
 // src/components/Tooltip/index.tsx
-import * as React24 from "react";
+import * as React23 from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React24.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React24.createElement(
+var TooltipContent = React23.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   TooltipPrimitive.Content,
   {
     ref,
