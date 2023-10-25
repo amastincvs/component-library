@@ -238,8 +238,8 @@ declare const useTheme: () => {
 
 type ToasterToast = ToastProps & {
     id: string;
-    title?: ReactNode;
-    description?: ReactNode;
+    title?: React.ReactNode;
+    description?: React.ReactNode;
     action?: ToastActionElement;
 };
 declare const actionTypes: {
