@@ -11,6 +11,7 @@ interface Props {
 function CVSHealthLogo() {
   return (
     <svg
+      aria-label="CVS Health logo"
       version="1.2"
       baseProfile="tiny"
       id="Layer_1"
@@ -97,15 +98,19 @@ function Header(props: HTMLAttributes<HTMLDivElement> & Props) {
 function HeaderThemeToggle(props: ComponentProps<typeof Button>) {
   return (
     <Button
+      {...props}
+      aria-label="Toggle light/dark theme"
       variant="outline"
       size="icon"
       onClick={props.onClick}
     >
       <IconSunFilled
+        aria-label="Click to switch to light mode"
         size={20}
         className="hidden dark:block"
       />
       <IconMoonStars
+        aria-label="Click to switch to dark mode"
         size={20}
         className="dark:hidden"
       />
