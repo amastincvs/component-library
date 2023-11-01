@@ -532,6 +532,7 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 var DialogClose = React8.forwardRef(({ children, className, ...props }, ref) => /* @__PURE__ */ React8.createElement(
   DialogPrimitive.Close,
   {
+    "aria-label": "Close",
     ref,
     className: cn(
       "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
@@ -539,8 +540,7 @@ var DialogClose = React8.forwardRef(({ children, className, ...props }, ref) => 
     ),
     ...props
   },
-  children,
-  /* @__PURE__ */ React8.createElement("span", { className: "sr-only" }, "Close")
+  children
 ));
 DialogClose.displayName = DialogPrimitive.Content.displayName;
 var DialogContent = React8.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ React8.createElement(DialogPortal, null, /* @__PURE__ */ React8.createElement(DialogOverlay, null), /* @__PURE__ */ React8.createElement(
