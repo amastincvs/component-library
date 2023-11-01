@@ -388,15 +388,17 @@ var DialogOverlay = React8.forwardRef(({ className, ...props }, ref) => /* @__PU
   }
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
-var DialogClose = React8.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React8.createElement(
+var DialogClose = React8.forwardRef(({ children, className, ...props }, ref) => /* @__PURE__ */ React8.createElement(
   DialogPrimitive.Close,
   {
+    ref,
     className: cn(
       "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
       className
-    )
+    ),
+    ...props
   },
-  props.children,
+  children,
   /* @__PURE__ */ React8.createElement("span", { className: "sr-only" }, "Close")
 ));
 DialogClose.displayName = DialogPrimitive.Content.displayName;
@@ -713,6 +715,7 @@ function CVSHealthLogo() {
   return /* @__PURE__ */ React11.createElement(
     "svg",
     {
+      "aria-label": "CVS Health logo",
       version: "1.2",
       baseProfile: "tiny",
       id: "Layer_1",
@@ -765,6 +768,8 @@ function HeaderThemeToggle(props) {
   return /* @__PURE__ */ React11.createElement(
     Button,
     {
+      ...props,
+      "aria-label": "Toggle light/dark theme",
       variant: "outline",
       size: "icon",
       onClick: props.onClick
@@ -772,6 +777,7 @@ function HeaderThemeToggle(props) {
     /* @__PURE__ */ React11.createElement(
       IconSunFilled,
       {
+        "aria-label": "Click to switch to light mode",
         size: 20,
         className: "hidden dark:block"
       }
@@ -779,6 +785,7 @@ function HeaderThemeToggle(props) {
     /* @__PURE__ */ React11.createElement(
       IconMoonStars,
       {
+        "aria-label": "Click to switch to dark mode",
         size: 20,
         className: "dark:hidden"
       }
