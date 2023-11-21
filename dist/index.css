@@ -1153,8 +1153,8 @@ body {
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
 }
-.hover\:\!text-current:hover {
-  color: currentColor !important;
+.hover\:\!text-card-foreground:hover {
+  color: hsl(var(--card-foreground)) !important;
 }
 .hover\:\!text-muted-foreground:hover {
   color: hsl(var(--muted-foreground)) !important;
@@ -1572,8 +1572,8 @@ body {
 .\[\&\:has\(input\:invalid\)\]\:text-muted-foreground:has(input:invalid) {
   color: hsl(var(--muted-foreground));
 }
-.\[\&\:has\(input\:valid\)\]\:text-current:has(input:valid) {
-  color: currentColor;
+.\[\&\:has\(input\:valid\)\]\:text-card-foreground:has(input:valid) {
+  color: hsl(var(--card-foreground));
 }
 .\[\&\>\[role\=checkbox\]\]\:translate-y-\[2px\] > [role=checkbox] {
   --tw-translate-y: 2px;
@@ -2813,8 +2813,8 @@ body {
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
 }
-.hover\:\!text-current:hover {
-  color: currentColor !important;
+.hover\:\!text-card-foreground:hover {
+  color: hsl(var(--card-foreground)) !important;
 }
 .hover\:\!text-muted-foreground:hover {
   color: hsl(var(--muted-foreground)) !important;
@@ -3232,8 +3232,8 @@ body {
 .\[\&\:has\(input\:invalid\)\]\:text-muted-foreground:has(input:invalid) {
   color: hsl(var(--muted-foreground));
 }
-.\[\&\:has\(input\:valid\)\]\:text-current:has(input:valid) {
-  color: currentColor;
+.\[\&\:has\(input\:valid\)\]\:text-card-foreground:has(input:valid) {
+  color: hsl(var(--card-foreground));
 }
 .\[\&\>\[role\=checkbox\]\]\:translate-y-\[2px\] > [role=checkbox] {
   --tw-translate-y: 2px;

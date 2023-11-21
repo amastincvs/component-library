@@ -13,7 +13,7 @@ const Input = React.forwardRef<
     <div
       className={cn(
         props.icon
-          ? 'relative flex items-center hover:!text-current [&:has(input:invalid)]:text-muted-foreground [&:has(input:valid)]:text-current [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:transition-all'
+          ? 'relative flex items-center hover:!text-card-foreground [&:has(input:invalid)]:text-muted-foreground [&:has(input:valid)]:text-card-foreground [&>svg]:absolute [&>svg]:left-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:transition-all'
           : undefined,
         props.icon && props.disabled
           ? 'cursor-not-allowed text-muted-foreground opacity-50 hover:!text-muted-foreground'
