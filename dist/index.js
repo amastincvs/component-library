@@ -119,6 +119,7 @@ __export(src_exports, {
   SelectTrigger: () => SelectTrigger,
   SelectValue: () => SelectValue,
   Separator: () => Separator4,
+  Slider: () => Slider,
   Switch: () => Switch,
   Table: () => Table,
   TableBody: () => TableBody,
@@ -1358,10 +1359,28 @@ var Separator4 = React20.forwardRef(
 );
 Separator4.displayName = SeparatorPrimitive.Root.displayName;
 
-// src/components/Switch/index.tsx
+// src/components/Slider/index.tsx
 var React21 = __toESM(require("react"));
+var SliderPrimitive = __toESM(require("@radix-ui/react-slider"));
+var Slider = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React21.createElement(
+  SliderPrimitive.Root,
+  {
+    ref,
+    className: cn(
+      "relative flex w-full touch-none select-none items-center",
+      className
+    ),
+    ...props
+  },
+  /* @__PURE__ */ React21.createElement(SliderPrimitive.Track, { className: "relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20" }, /* @__PURE__ */ React21.createElement(SliderPrimitive.Range, { className: "absolute h-full bg-primary" })),
+  /* @__PURE__ */ React21.createElement(SliderPrimitive.Thumb, { className: "block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" })
+));
+Slider.displayName = SliderPrimitive.Root.displayName;
+
+// src/components/Switch/index.tsx
+var React22 = __toESM(require("react"));
 var SwitchPrimitives = __toESM(require("@radix-ui/react-switch"));
-var Switch = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React21.createElement(
+var Switch = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
   SwitchPrimitives.Root,
   {
     className: cn(
@@ -1371,7 +1390,7 @@ var Switch = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
     ...props,
     ref
   },
-  /* @__PURE__ */ React21.createElement(
+  /* @__PURE__ */ React22.createElement(
     SwitchPrimitives.Thumb,
     {
       className: cn(
@@ -1383,8 +1402,8 @@ var Switch = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
 // src/components/Table/index.tsx
-var React22 = __toESM(require("react"));
-var Table = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement("div", { className: "relative w-full overflow-auto" }, /* @__PURE__ */ React22.createElement(
+var React23 = __toESM(require("react"));
+var Table = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement("div", { className: "relative w-full overflow-auto" }, /* @__PURE__ */ React23.createElement(
   "table",
   {
     ref,
@@ -1393,7 +1412,7 @@ var Table = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */
   }
 )));
 Table.displayName = "Table";
-var TableHeader = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableHeader = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "thead",
   {
     ref,
@@ -1402,7 +1421,7 @@ var TableHeader = React22.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TableHeader.displayName = "TableHeader";
-var TableBody = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableBody = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "tbody",
   {
     ref,
@@ -1411,7 +1430,7 @@ var TableBody = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableBody.displayName = "TableBody";
-var TableFooter = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableFooter = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "tfoot",
   {
     ref,
@@ -1420,7 +1439,7 @@ var TableFooter = React22.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TableFooter.displayName = "TableFooter";
-var TableRow = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableRow = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "tr",
   {
     ref,
@@ -1432,7 +1451,7 @@ var TableRow = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TableRow.displayName = "TableRow";
-var TableHead = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableHead = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "th",
   {
     ref,
@@ -1444,7 +1463,7 @@ var TableHead = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableHead.displayName = "TableHead";
-var TableCell = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableCell = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "td",
   {
     ref,
@@ -1456,7 +1475,7 @@ var TableCell = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE_
   }
 ));
 TableCell.displayName = "TableCell";
-var TableCaption = React22.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React22.createElement(
+var TableCaption = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
   "caption",
   {
     ref,
@@ -1467,10 +1486,10 @@ var TableCaption = React22.forwardRef(({ className, ...props }, ref) => /* @__PU
 TableCaption.displayName = "TableCaption";
 
 // src/components/Tabs/index.tsx
-var React23 = __toESM(require("react"));
+var React24 = __toESM(require("react"));
 var TabsPrimitive = __toESM(require("@radix-ui/react-tabs"));
 var Tabs = TabsPrimitive.Root;
-var TabsList = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
+var TabsList = React24.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React24.createElement(
   TabsPrimitive.List,
   {
     ref,
@@ -1482,7 +1501,7 @@ var TabsList = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
-var TabsTrigger = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
+var TabsTrigger = React24.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React24.createElement(
   TabsPrimitive.Trigger,
   {
     ref,
@@ -1494,7 +1513,7 @@ var TabsTrigger = React23.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
-var TabsContent = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React23.createElement(
+var TabsContent = React24.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React24.createElement(
   TabsPrimitive.Content,
   {
     ref,
@@ -1508,10 +1527,10 @@ var TabsContent = React23.forwardRef(({ className, ...props }, ref) => /* @__PUR
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 // src/components/Textarea/index.tsx
-var React24 = __toESM(require("react"));
-var Textarea = React24.forwardRef(
+var React25 = __toESM(require("react"));
+var Textarea = React25.forwardRef(
   ({ className, ...props }, ref) => {
-    return /* @__PURE__ */ React24.createElement(
+    return /* @__PURE__ */ React25.createElement(
       "textarea",
       {
         className: cn(
@@ -1527,12 +1546,12 @@ var Textarea = React24.forwardRef(
 Textarea.displayName = "Textarea";
 
 // src/components/Toast/index.tsx
-var React25 = __toESM(require("react"));
+var React26 = __toESM(require("react"));
 var import_icons_react8 = require("@tabler/icons-react");
 var ToastPrimitives = __toESM(require("@radix-ui/react-toast"));
 var import_class_variance_authority5 = require("class-variance-authority");
 var ToastProvider = ToastPrimitives.Provider;
-var ToastViewport = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React25.createElement(
+var ToastViewport = React26.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React26.createElement(
   ToastPrimitives.Viewport,
   {
     ref,
@@ -1558,8 +1577,8 @@ var toastVariants = (0, import_class_variance_authority5.cva)(
     }
   }
 );
-var Toast = React25.forwardRef(({ className, variant, ...props }, ref) => {
-  return /* @__PURE__ */ React25.createElement(
+var Toast = React26.forwardRef(({ className, variant, ...props }, ref) => {
+  return /* @__PURE__ */ React26.createElement(
     ToastPrimitives.Root,
     {
       ref,
@@ -1569,7 +1588,7 @@ var Toast = React25.forwardRef(({ className, variant, ...props }, ref) => {
   );
 });
 Toast.displayName = ToastPrimitives.Root.displayName;
-var ToastAction = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React25.createElement(
+var ToastAction = React26.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React26.createElement(
   ToastPrimitives.Action,
   {
     ref,
@@ -1581,7 +1600,7 @@ var ToastAction = React25.forwardRef(({ className, ...props }, ref) => /* @__PUR
   }
 ));
 ToastAction.displayName = ToastPrimitives.Action.displayName;
-var ToastClose = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React25.createElement(
+var ToastClose = React26.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React26.createElement(
   ToastPrimitives.Close,
   {
     ref,
@@ -1592,10 +1611,10 @@ var ToastClose = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE
     "toast-close": "",
     ...props
   },
-  /* @__PURE__ */ React25.createElement(import_icons_react8.IconX, { className: "h-4 w-4" })
+  /* @__PURE__ */ React26.createElement(import_icons_react8.IconX, { className: "h-4 w-4" })
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;
-var ToastTitle = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React25.createElement(
+var ToastTitle = React26.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React26.createElement(
   ToastPrimitives.Title,
   {
     ref,
@@ -1604,7 +1623,7 @@ var ToastTitle = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE
   }
 ));
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
-var ToastDescription = React25.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React25.createElement(
+var ToastDescription = React26.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React26.createElement(
   ToastPrimitives.Description,
   {
     ref,
@@ -1615,10 +1634,10 @@ var ToastDescription = React25.forwardRef(({ className, ...props }, ref) => /* @
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
 // src/components/Toaster/index.tsx
-var React27 = __toESM(require("react"));
+var React28 = __toESM(require("react"));
 
 // src/hooks/use-toast.ts
-var React26 = __toESM(require("react"));
+var React27 = __toESM(require("react"));
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count = 0;
@@ -1720,8 +1739,8 @@ function toast({ ...props }) {
   };
 }
 function useToast() {
-  const [state, setState] = React26.useState(memoryState);
-  React26.useEffect(() => {
+  const [state, setState] = React27.useState(memoryState);
+  React27.useEffect(() => {
     listeners.push(setState);
     return () => {
       const index = listeners.indexOf(setState);
@@ -1740,27 +1759,27 @@ function useToast() {
 // src/components/Toaster/index.tsx
 function Toaster() {
   const { toasts } = useToast();
-  return /* @__PURE__ */ React27.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
-    return /* @__PURE__ */ React27.createElement(
+  return /* @__PURE__ */ React28.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
+    return /* @__PURE__ */ React28.createElement(
       Toast,
       {
         key: id,
         ...props
       },
-      /* @__PURE__ */ React27.createElement("div", { className: "grid gap-1" }, title && /* @__PURE__ */ React27.createElement(ToastTitle, null, title), description && /* @__PURE__ */ React27.createElement(ToastDescription, null, description)),
+      /* @__PURE__ */ React28.createElement("div", { className: "grid gap-1" }, title && /* @__PURE__ */ React28.createElement(ToastTitle, null, title), description && /* @__PURE__ */ React28.createElement(ToastDescription, null, description)),
       action,
-      /* @__PURE__ */ React27.createElement(ToastClose, null)
+      /* @__PURE__ */ React28.createElement(ToastClose, null)
     );
-  }), /* @__PURE__ */ React27.createElement(ToastViewport, null));
+  }), /* @__PURE__ */ React28.createElement(ToastViewport, null));
 }
 
 // src/components/Tooltip/index.tsx
-var React28 = __toESM(require("react"));
+var React29 = __toESM(require("react"));
 var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React28.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React28.createElement(
+var TooltipContent = React29.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React29.createElement(
   TooltipPrimitive.Content,
   {
     ref,
@@ -1916,6 +1935,7 @@ var useTheme = () => {
   SelectTrigger,
   SelectValue,
   Separator,
+  Slider,
   Switch,
   Table,
   TableBody,
