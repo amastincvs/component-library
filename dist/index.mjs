@@ -18,7 +18,7 @@ var AccordionItem = React2.forwardRef(({ className, ...props }, ref) => /* @__PU
   AccordionPrimitive.Item,
   {
     ref,
-    className: cn("border-b", className),
+    className: cn("border-b border-border", className),
     ...props
   }
 ));
@@ -28,7 +28,7 @@ var AccordionTrigger = React2.forwardRef(({ className, children, ...props }, ref
   {
     ref,
     className: cn(
-      "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+      "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
       className
     ),
     ...props
