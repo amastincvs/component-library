@@ -1057,6 +1057,10 @@ body {
   border-top-width: 1px;
 }
 
+.border-border {
+  border-color: hsl(var(--border));
+}
+
 .border-destructive {
   border-color: hsl(var(--destructive));
 }
