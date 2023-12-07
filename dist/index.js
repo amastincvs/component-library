@@ -1057,15 +1057,16 @@ function Header2(props) {
     props.children
   );
 }
-function HeaderThemeToggle(props) {
-  return /* @__PURE__ */ React13.createElement(
+var HeaderThemeToggle = React13.forwardRef((props, ref) => {
+  return /* @__PURE__ */ React13.createElement(TooltipProvider, { delayDuration: 0 }, /* @__PURE__ */ React13.createElement(Tooltip, null, /* @__PURE__ */ React13.createElement(TooltipTrigger, { asChild: true }, /* @__PURE__ */ React13.createElement(
     Button,
     {
       ...props,
-      "aria-label": "Toggle light/dark theme",
+      "aria-label": "Toggle theme",
       variant: "outline",
       size: "icon",
-      onClick: props.onClick
+      onClick: props.onClick,
+      ref
     },
     /* @__PURE__ */ React13.createElement(
       import_icons_react5.IconSunFilled,
@@ -1083,8 +1084,8 @@ function HeaderThemeToggle(props) {
         className: "dark:hidden"
       }
     )
-  );
-}
+  )), /* @__PURE__ */ React13.createElement(TooltipContent, { "aria-hidden": "true" }, "Toggle theme")));
+});
 HeaderThemeToggle.displayName = "HeaderThemeToggle";
 
 // src/components/Input/index.tsx

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ReactNode, HTMLAttributes, ComponentProps } from 'react';
+import { ReactNode, HTMLAttributes } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import * as class_variance_authority_dist_types from 'class-variance-authority/dist/types';
 import { VariantProps } from 'class-variance-authority';
@@ -195,10 +195,7 @@ interface Props {
     name?: string;
 }
 declare function Header(props: HTMLAttributes<HTMLDivElement> & Props): JSX.Element;
-declare function HeaderThemeToggle(props: ComponentProps<typeof Button>): JSX.Element;
-declare namespace HeaderThemeToggle {
-    var displayName: string;
-}
+declare const HeaderThemeToggle: React.ForwardRefExoticComponent<Pick<ButtonProps & React.RefAttributes<HTMLButtonElement>, "key" | keyof ButtonProps> & React.RefAttributes<HTMLButtonElement>>;
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 declare const Input: React.ForwardRefExoticComponent<InputProps & {
