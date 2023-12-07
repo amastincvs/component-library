@@ -1,7 +1,13 @@
 import * as React from 'react'
 import { type ComponentProps, type HTMLAttributes } from 'react'
-import { cn } from '../../lib/utils'
-import { Button } from '../index'
+import { cn } from '~/lib'
+import {
+  Button,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '../index'
 import { IconMoonStars, IconSunFilled } from '@tabler/icons-react'
 
 interface Props {
@@ -95,28 +101,39 @@ function Header(props: HTMLAttributes<HTMLDivElement> & Props) {
   )
 }
 
-function HeaderThemeToggle(props: ComponentProps<typeof Button>) {
+const HeaderThemeToggle = React.forwardRef<
+  HTMLButtonElement,
+  ComponentProps<typeof Button>
+>((props, ref) => {
   return (
-    <Button
-      {...props}
-      aria-label="Toggle light/dark theme"
-      variant="outline"
-      size="icon"
-      onClick={props.onClick}
-    >
-      <IconSunFilled
-        aria-label="Click to switch to light mode"
-        size={20}
-        className="hidden dark:block"
-      />
-      <IconMoonStars
-        aria-label="Click to switch to dark mode"
-        size={20}
-        className="dark:hidden"
-      />
-    </Button>
+    <TooltipProvider delayDuration={0}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            {...props}
+            aria-label="Toggle light/dark theme"
+            variant="outline"
+            size="icon"
+            onClick={props.onClick}
+            ref={ref}
+          >
+            <IconSunFilled
+              aria-label="Click to switch to light mode"
+              size={20}
+              className="hidden dark:block"
+            />
+            <IconMoonStars
+              aria-label="Click to switch to dark mode"
+              size={20}
+              className="dark:hidden"
+            />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Toggle theme</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   )
-}
+})
 HeaderThemeToggle.displayName = 'HeaderThemeToggle'
 
 export { Header, HeaderThemeToggle }
