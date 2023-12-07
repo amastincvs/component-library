@@ -111,7 +111,7 @@ const HeaderThemeToggle = React.forwardRef<
         <TooltipTrigger asChild>
           <Button
             {...props}
-            aria-label="Toggle light/dark theme"
+            aria-label="Toggle theme"
             variant="outline"
             size="icon"
             onClick={props.onClick}
@@ -129,7 +129,7 @@ const HeaderThemeToggle = React.forwardRef<
             />
           </Button>
         </TooltipTrigger>
-        <TooltipContent>Toggle theme</TooltipContent>
+        <TooltipContent aria-hidden="true">Toggle theme</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   )
