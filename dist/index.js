@@ -104,6 +104,7 @@ __export(src_exports, {
   Input: () => Input,
   Label: () => Label3,
   Popover: () => Popover,
+  PopoverClose: () => PopoverClose,
   PopoverContent: () => PopoverContent,
   PopoverTrigger: () => PopoverTrigger,
   RadioGroup: () => RadioGroup3,
@@ -1139,6 +1140,7 @@ var React16 = __toESM(require("react"));
 var PopoverPrimitive = __toESM(require("@radix-ui/react-popover"));
 var Popover = PopoverPrimitive.Root;
 var PopoverTrigger = PopoverPrimitive.Trigger;
+var PopoverClose = PopoverPrimitive.Close;
 var PopoverContent = React16.forwardRef(({ className, align = "center", sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React16.createElement(PopoverPrimitive.Portal, null, /* @__PURE__ */ React16.createElement(
   PopoverPrimitive.Content,
   {
@@ -1921,6 +1923,7 @@ var useTheme = () => {
   Input,
   Label,
   Popover,
+  PopoverClose,
   PopoverContent,
   PopoverTrigger,
   RadioGroup,
