@@ -121,6 +121,7 @@ __export(src_exports, {
   SelectValue: () => SelectValue,
   Separator: () => Separator4,
   Slider: () => Slider,
+  Sonner: () => Sonner,
   Switch: () => Switch,
   Table: () => Table,
   TableBody: () => TableBody,
@@ -144,7 +145,7 @@ __export(src_exports, {
   ToastProvider: () => ToastProvider,
   ToastTitle: () => ToastTitle,
   ToastViewport: () => ToastViewport,
-  Toaster: () => Toaster,
+  Toaster: () => Toaster2,
   Tooltip: () => Tooltip,
   TooltipContent: () => TooltipContent,
   TooltipProvider: () => TooltipProvider,
@@ -155,7 +156,7 @@ __export(src_exports, {
   reducer: () => reducer,
   toast: () => toast,
   useFormField: () => useFormField,
-  useTheme: () => useTheme,
+  useTheme: () => useTheme2,
   useToast: () => useToast
 });
 module.exports = __toCommonJS(src_exports);
@@ -1380,6 +1381,29 @@ var Slider = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
 ));
 Slider.displayName = SliderPrimitive.Root.displayName;
 
+// src/components/Sonner/index.tsx
+var import_next_themes = require("next-themes");
+var import_sonner = require("sonner");
+var Sonner = ({ ...props }) => {
+  const { theme = "system" } = (0, import_next_themes.useTheme)();
+  return /* @__PURE__ */ React.createElement(
+    import_sonner.Toaster,
+    {
+      theme,
+      className: "toaster group",
+      toastOptions: {
+        classNames: {
+          toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+          description: "group-[.toast]:text-muted-foreground",
+          actionButton: "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+          cancelButton: "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground"
+        }
+      },
+      ...props
+    }
+  );
+};
+
 // src/components/Switch/index.tsx
 var React22 = __toESM(require("react"));
 var SwitchPrimitives = __toESM(require("@radix-ui/react-switch"));
@@ -1760,7 +1784,7 @@ function useToast() {
 }
 
 // src/components/Toaster/index.tsx
-function Toaster() {
+function Toaster2() {
   const { toasts } = useToast();
   return /* @__PURE__ */ React28.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
     return /* @__PURE__ */ React28.createElement(
@@ -1842,7 +1866,7 @@ function ThemeProvider({
 
 // src/hooks/use-theme.ts
 var import_react2 = require("react");
-var useTheme = () => {
+var useTheme2 = () => {
   const context = (0, import_react2.useContext)(ThemeProviderContext);
   if (context === void 0)
     throw new Error("useTheme must be used within a ThemeProvider");
@@ -1940,6 +1964,7 @@ var useTheme = () => {
   SelectValue,
   Separator,
   Slider,
+  Sonner,
   Switch,
   Table,
   TableBody,
