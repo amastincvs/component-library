@@ -1232,6 +1232,29 @@ var Slider = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ *
 ));
 Slider.displayName = SliderPrimitive.Root.displayName;
 
+// src/components/Sonner/index.tsx
+import { useTheme } from "next-themes";
+import { Toaster } from "sonner";
+var Sonner = ({ ...props }) => {
+  const { theme = "system" } = useTheme();
+  return /* @__PURE__ */ React.createElement(
+    Toaster,
+    {
+      theme,
+      className: "toaster group",
+      toastOptions: {
+        classNames: {
+          toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+          description: "group-[.toast]:text-muted-foreground",
+          actionButton: "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+          cancelButton: "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground"
+        }
+      },
+      ...props
+    }
+  );
+};
+
 // src/components/Switch/index.tsx
 import * as React22 from "react";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
@@ -1612,7 +1635,7 @@ function useToast() {
 }
 
 // src/components/Toaster/index.tsx
-function Toaster() {
+function Toaster2() {
   const { toasts } = useToast();
   return /* @__PURE__ */ React28.createElement(ToastProvider, null, toasts.map(function({ id, title, description, action, ...props }) {
     return /* @__PURE__ */ React28.createElement(
@@ -1694,7 +1717,7 @@ function ThemeProvider({
 
 // src/hooks/use-theme.ts
 import { useContext as useContext2 } from "react";
-var useTheme = () => {
+var useTheme2 = () => {
   const context = useContext2(ThemeProviderContext);
   if (context === void 0)
     throw new Error("useTheme must be used within a ThemeProvider");
@@ -1791,6 +1814,7 @@ export {
   SelectValue,
   Separator4 as Separator,
   Slider,
+  Sonner,
   Switch,
   Table,
   TableBody,
@@ -1814,7 +1838,7 @@ export {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-  Toaster,
+  Toaster2 as Toaster,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -1825,6 +1849,6 @@ export {
   reducer,
   toast,
   useFormField,
-  useTheme,
+  useTheme2 as useTheme,
   useToast
 };
