@@ -1,4 +1,4 @@
-import { Header, HeaderThemeToggle, Input } from '~/components'
+import { Checkbox, Header, HeaderThemeToggle, Input } from '~/components'
 
 export default function Playground() {
   return (
