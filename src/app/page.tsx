@@ -1,4 +1,4 @@
-import { Checkbox, Header, HeaderThemeToggle, Input } from '~/components'
+import { Header, HeaderThemeToggle } from '~/components'
 
 export default function Playground() {
   return (
@@ -6,9 +6,7 @@ export default function Playground() {
       <Header name="Component Library Playground">
         <HeaderThemeToggle />
       </Header>
-      <div className="h-full w-full">
-        <Input />
-      </div>
+      <div className="h-full w-full">Your code here.</div>
     </div>
   )
 }

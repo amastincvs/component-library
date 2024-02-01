@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { Toaster, toast } from 'sonner'
+import React from 'react'
 
 type ToasterProps = React.ComponentProps<typeof Toaster>
 
