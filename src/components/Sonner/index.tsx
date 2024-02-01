@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { Toaster } from 'sonner'
+import { Toaster, toast } from 'sonner'
 
 type ToasterProps = React.ComponentProps<typeof Toaster>
 
@@ -28,4 +28,4 @@ const Sonner = ({ ...props }: ToasterProps) => {
   )
 }
 
-export { Sonner }
+export { Sonner, toast as sonnerToast }

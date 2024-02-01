@@ -1234,7 +1234,7 @@ Slider.displayName = SliderPrimitive.Root.displayName;
 
 // src/components/Sonner/index.tsx
 import { useTheme } from "next-themes";
-import { Toaster } from "sonner";
+import { Toaster, toast } from "sonner";
 var Sonner = ({ ...props }) => {
   const { theme = "system" } = useTheme();
   return /* @__PURE__ */ React.createElement(
@@ -1556,8 +1556,8 @@ var reducer = (state, action) => {
       if (toastId) {
         addToRemoveQueue(toastId);
       } else {
-        state.toasts.forEach((toast2) => {
-          addToRemoveQueue(toast2.id);
+        state.toasts.forEach((toast3) => {
+          addToRemoveQueue(toast3.id);
         });
       }
       return {
@@ -1591,7 +1591,7 @@ function dispatch(action) {
     listener(memoryState);
   });
 }
-function toast({ ...props }) {
+function toast2({ ...props }) {
   const id = genId();
   const update = (props2) => dispatch({
     type: "UPDATE_TOAST",
@@ -1629,7 +1629,7 @@ function useToast() {
   }, [state]);
   return {
     ...state,
-    toast,
+    toast: toast2,
     dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId })
   };
 }
@@ -1847,7 +1847,8 @@ export {
   buttonVariants,
   cn,
   reducer,
-  toast,
+  toast as sonnerToast,
+  toast2 as toast,
   useFormField,
   useTheme2 as useTheme,
   useToast

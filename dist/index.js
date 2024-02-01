@@ -154,7 +154,8 @@ __export(src_exports, {
   buttonVariants: () => buttonVariants,
   cn: () => cn,
   reducer: () => reducer,
-  toast: () => toast,
+  sonnerToast: () => import_sonner.toast,
+  toast: () => toast2,
   useFormField: () => useFormField,
   useTheme: () => useTheme2,
   useToast: () => useToast
@@ -1705,8 +1706,8 @@ var reducer = (state, action) => {
       if (toastId) {
         addToRemoveQueue(toastId);
       } else {
-        state.toasts.forEach((toast2) => {
-          addToRemoveQueue(toast2.id);
+        state.toasts.forEach((toast3) => {
+          addToRemoveQueue(toast3.id);
         });
       }
       return {
@@ -1740,7 +1741,7 @@ function dispatch(action) {
     listener(memoryState);
   });
 }
-function toast({ ...props }) {
+function toast2({ ...props }) {
   const id = genId();
   const update = (props2) => dispatch({
     type: "UPDATE_TOAST",
@@ -1778,7 +1779,7 @@ function useToast() {
   }, [state]);
   return {
     ...state,
-    toast,
+    toast: toast2,
     dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId })
   };
 }
@@ -1997,6 +1998,7 @@ var useTheme2 = () => {
   buttonVariants,
   cn,
   reducer,
+  sonnerToast,
   toast,
   useFormField,
   useTheme,

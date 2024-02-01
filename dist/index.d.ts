@@ -20,6 +20,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { Toaster as Toaster$1 } from 'sonner';
+export { toast as sonnerToast } from 'sonner';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import * as ToastPrimitives from '@radix-ui/react-toast';
