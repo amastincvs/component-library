@@ -7,7 +7,7 @@ import React from 'react'
 type ToasterProps = React.ComponentProps<typeof Toaster>
 
 const Sonner = ({ ...props }: ToasterProps) => {
-  const { theme = 'system' } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <Toaster

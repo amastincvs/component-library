@@ -1387,7 +1387,7 @@ var import_next_themes = require("next-themes");
 var import_sonner = require("sonner");
 var import_react = __toESM(require("react"));
 var Sonner = ({ ...props }) => {
-  const { theme = "system" } = (0, import_next_themes.useTheme)();
+  const { theme } = (0, import_next_themes.useTheme)();
   return /* @__PURE__ */ import_react.default.createElement(
     import_sonner.Toaster,
     {
