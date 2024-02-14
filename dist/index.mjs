@@ -1237,7 +1237,7 @@ import { useTheme } from "next-themes";
 import { Toaster, toast } from "sonner";
 import React22 from "react";
 var Sonner = ({ ...props }) => {
-  const { theme = "system" } = useTheme();
+  const { theme } = useTheme();
   return /* @__PURE__ */ React22.createElement(
     Toaster,
     {
