@@ -925,6 +925,10 @@ body {
           user-select: none;
 }
 
+.grid-cols-\[auto\2c 1fr\] {
+  grid-template-columns: auto 1fr;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -951,6 +955,10 @@ body {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-4 {
@@ -1294,6 +1302,10 @@ body {
   vertical-align: middle;
 }
 
+.font-sans {
+  font-family: CVS Health Sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
@@ -1337,8 +1349,22 @@ body {
   letter-spacing: 0.1em;
 }
 
+.\!text-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+
 .text-accent-foreground {
   color: hsl(var(--accent-foreground));
+}
+
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .text-card-foreground {
@@ -1355,6 +1381,11 @@ body {
 
 .text-destructive-foreground {
   color: hsl(var(--destructive-foreground));
+}
+
+.text-emerald-600 {
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity));
 }
 
 .text-foreground {
@@ -1379,6 +1410,11 @@ body {
 
 .text-primary-foreground {
   color: hsl(var(--primary-foreground));
+}
+
+.text-rose-600 {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
 }
 
 .text-secondary-foreground {
@@ -1412,6 +1448,12 @@ body {
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2040,6 +2082,12 @@ body {
   fill: #fff;
 }
 
+@media (min-width: 600px) {
+  .min-\[600px\]\:min-w-\[364px\] {
+    min-width: 364px;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:bottom-0 {
     bottom: 0px;
@@ -2154,6 +2202,15 @@ body {
 .\[\&\>\[role\=checkbox\]\]\:translate-y-\[2px\]>[role=checkbox] {
   --tw-translate-y: 2px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.\[\&\>div\[data-icon\]\]\:mx-0>div[data-icon] {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.\[\&\>div\[data-icon\]\]\:mt-1>div[data-icon] {
+  margin-top: 0.25rem;
 }
 
 .\[\&\>div\]\:h-full>div {
