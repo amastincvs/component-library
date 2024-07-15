@@ -992,7 +992,7 @@ import * as React16 from "react";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 var Popover = PopoverPrimitive.Root;
 var PopoverTrigger = PopoverPrimitive.Trigger;
-var PopoverClose = PopoverPrimitive.Close;
+var PopoverAnchor = PopoverPrimitive.Anchor;
 var PopoverContent = React16.forwardRef(({ className, align = "center", sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React16.createElement(PopoverPrimitive.Portal, null, /* @__PURE__ */ React16.createElement(
   PopoverPrimitive.Content,
   {
@@ -1804,7 +1804,7 @@ export {
   Input,
   Label3 as Label,
   Popover,
-  PopoverClose,
+  PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
   RadioGroup3 as RadioGroup,
