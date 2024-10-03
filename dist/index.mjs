@@ -1742,13 +1742,84 @@ function Toaster2() {
   }), /* @__PURE__ */ React30.createElement(ToastViewport, null));
 }
 
-// src/components/Tooltip/index.tsx
+// src/components/Toggle/index.tsx
 import * as React31 from "react";
+import * as TogglePrimitive from "@radix-ui/react-toggle";
+import { cva as cva6 } from "class-variance-authority";
+var toggleVariants = cva6(
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
+  {
+    variants: {
+      variant: {
+        default: "bg-transparent",
+        outline: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground"
+      },
+      size: {
+        default: "h-9 px-3",
+        sm: "h-8 px-2",
+        lg: "h-10 px-3"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default"
+    }
+  }
+);
+var Toggle = React31.forwardRef(({ className, variant, size, ...props }, ref) => /* @__PURE__ */ React31.createElement(
+  TogglePrimitive.Root,
+  {
+    ref,
+    className: cn(toggleVariants({ variant, size, className })),
+    ...props
+  }
+));
+Toggle.displayName = TogglePrimitive.Root.displayName;
+
+// src/components/ToggleGroup/index.tsx
+import * as React32 from "react";
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+var ToggleGroupContext = React32.createContext({
+  size: "default",
+  variant: "default"
+});
+var ToggleGroup = React32.forwardRef(({ className, variant, size, children, ...props }, ref) => /* @__PURE__ */ React32.createElement(
+  ToggleGroupPrimitive.Root,
+  {
+    ref,
+    className: cn("flex items-center justify-center gap-1", className),
+    ...props
+  },
+  /* @__PURE__ */ React32.createElement(ToggleGroupContext.Provider, { value: { variant, size } }, children)
+));
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
+var ToggleGroupItem = React32.forwardRef(({ className, children, variant, size, ...props }, ref) => {
+  const context = React32.useContext(ToggleGroupContext);
+  return /* @__PURE__ */ React32.createElement(
+    ToggleGroupPrimitive.Item,
+    {
+      ref,
+      className: cn(
+        toggleVariants({
+          variant: context.variant || variant,
+          size: context.size || size
+        }),
+        className
+      ),
+      ...props
+    },
+    children
+  );
+});
+ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;
+
+// src/components/Tooltip/index.tsx
+import * as React33 from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 var TooltipProvider = TooltipPrimitive.Provider;
 var Tooltip = TooltipPrimitive.Root;
 var TooltipTrigger = TooltipPrimitive.Trigger;
-var TooltipContent = React31.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React31.createElement(
+var TooltipContent = React33.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ React33.createElement(
   TooltipPrimitive.Content,
   {
     ref,
@@ -1763,12 +1834,12 @@ var TooltipContent = React31.forwardRef(({ className, sideOffset = 4, ...props }
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 // src/context/ThemeProvider/index.tsx
-import { createContext as createContext2, useEffect as useEffect2, useState as useState2 } from "react";
+import { createContext as createContext3, useEffect as useEffect2, useState as useState2 } from "react";
 var initialState = {
   theme: "light",
   setTheme: () => null
 };
-var ThemeProviderContext = createContext2(initialState);
+var ThemeProviderContext = createContext3(initialState);
 function ThemeProvider({
   children,
   defaultTheme = "light",
@@ -1807,9 +1878,9 @@ function ThemeProvider({
 }
 
 // src/hooks/use-theme.ts
-import { useContext as useContext2 } from "react";
+import { useContext as useContext3 } from "react";
 var useTheme2 = () => {
-  const context = useContext2(ThemeProviderContext);
+  const context = useContext3(ThemeProviderContext);
   if (context === void 0)
     throw new Error("useTheme must be used within a ThemeProvider");
   return context;
@@ -1940,6 +2011,9 @@ export {
   ToastTitle,
   ToastViewport,
   Toaster2 as Toaster,
+  Toggle,
+  ToggleGroup,
+  ToggleGroupItem,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -1950,6 +2024,7 @@ export {
   reducer,
   toast as sonnerToast,
   toast2 as toast,
+  toggleVariants,
   useFormField,
   useTheme2 as useTheme,
   useToast

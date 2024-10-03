@@ -1239,6 +1239,9 @@ body {
 .hover\:bg-destructive\/90:hover {
   background-color: hsl(var(--destructive) / 0.9);
 }
+.hover\:bg-muted:hover {
+  background-color: hsl(var(--muted));
+}
 .hover\:bg-muted\/50:hover {
   background-color: hsl(var(--muted) / 0.5);
 }
@@ -1268,6 +1271,9 @@ body {
 }
 .hover\:text-foreground:hover {
   color: hsl(var(--foreground));
+}
+.hover\:text-muted-foreground:hover {
+  color: hsl(var(--muted-foreground));
 }
 .hover\:text-primary-foreground:hover {
   color: hsl(var(--primary-foreground));
@@ -1504,6 +1510,9 @@ body {
 .data-\[state\=checked\]\:bg-primary[data-state=checked] {
   background-color: hsl(var(--primary));
 }
+.data-\[state\=on\]\:bg-accent[data-state=on] {
+  background-color: hsl(var(--accent));
+}
 .data-\[state\=open\]\:bg-accent[data-state=open] {
   background-color: hsl(var(--accent));
 }
@@ -1521,6 +1530,9 @@ body {
 }
 .data-\[state\=checked\]\:text-primary-foreground[data-state=checked] {
   color: hsl(var(--primary-foreground));
+}
+.data-\[state\=on\]\:text-accent-foreground[data-state=on] {
+  color: hsl(var(--accent-foreground));
 }
 .data-\[state\=open\]\:text-accent-foreground[data-state=open] {
   color: hsl(var(--accent-foreground));
@@ -3053,6 +3065,9 @@ body {
 .hover\:bg-destructive\/90:hover {
   background-color: hsl(var(--destructive) / 0.9);
 }
+.hover\:bg-muted:hover {
+  background-color: hsl(var(--muted));
+}
 .hover\:bg-muted\/50:hover {
   background-color: hsl(var(--muted) / 0.5);
 }
@@ -3082,6 +3097,9 @@ body {
 }
 .hover\:text-foreground:hover {
   color: hsl(var(--foreground));
+}
+.hover\:text-muted-foreground:hover {
+  color: hsl(var(--muted-foreground));
 }
 .hover\:text-primary-foreground:hover {
   color: hsl(var(--primary-foreground));
@@ -3318,6 +3336,9 @@ body {
 .data-\[state\=checked\]\:bg-primary[data-state=checked] {
   background-color: hsl(var(--primary));
 }
+.data-\[state\=on\]\:bg-accent[data-state=on] {
+  background-color: hsl(var(--accent));
+}
 .data-\[state\=open\]\:bg-accent[data-state=open] {
   background-color: hsl(var(--accent));
 }
@@ -3335,6 +3356,9 @@ body {
 }
 .data-\[state\=checked\]\:text-primary-foreground[data-state=checked] {
   color: hsl(var(--primary-foreground));
+}
+.data-\[state\=on\]\:text-accent-foreground[data-state=on] {
+  color: hsl(var(--accent-foreground));
 }
 .data-\[state\=open\]\:text-accent-foreground[data-state=open] {
   color: hsl(var(--accent-foreground));
