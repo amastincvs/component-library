@@ -372,7 +372,7 @@ declare const useTheme: () => {
     setTheme: (theme: string) => void;
 };
 
-type ToasterToast = ToastProps & {
+type ToasterToast = Omit<ToastProps, 'id' | 'title' | 'description' | 'action'> & {
     id: string;
     title?: React.ReactNode;
     description?: React.ReactNode;

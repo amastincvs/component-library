@@ -668,10 +668,6 @@ body {
   right: 1rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .top-1 {
   top: 0.25rem;
 }
@@ -2160,10 +2156,6 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:bottom-0 {
-    bottom: 0px;
-  }
-
   .sm\:right-0 {
     right: 0px;
   }
