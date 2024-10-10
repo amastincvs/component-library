@@ -644,6 +644,10 @@ body {
   bottom: 0px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .left-1 {
   left: 0.25rem;
 }
@@ -656,6 +660,10 @@ body {
   left: 50%;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .right-1 {
   right: 0.25rem;
 }
@@ -666,6 +674,10 @@ body {
 
 .right-4 {
   right: 1rem;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .top-1 {
@@ -2108,6 +2120,14 @@ body {
   --tw-enter-translate-y: 0.5rem;
 }
 
+.data-\[state\=closed\]\:\!slide-out-to-left-full[data-state=closed] {
+  --tw-exit-translate-x: -100% !important;
+}
+
+.data-\[state\=closed\]\:\!slide-out-to-right-full[data-state=closed] {
+  --tw-exit-translate-x: 100% !important;
+}
+
 .data-\[state\=closed\]\:slide-out-to-left-1\/2[data-state=closed] {
   --tw-exit-translate-x: -50%;
 }
@@ -2118,6 +2138,10 @@ body {
 
 .data-\[state\=closed\]\:slide-out-to-top-\[48\%\][data-state=closed] {
   --tw-exit-translate-y: -48%;
+}
+
+.data-\[state\=open\]\:\!slide-in-from-bottom-full[data-state=open] {
+  --tw-enter-translate-y: 100% !important;
 }
 
 .data-\[state\=open\]\:slide-in-from-left-1\/2[data-state=open] {
@@ -2156,6 +2180,10 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:bottom-0 {
+    bottom: 0px;
+  }
+
   .sm\:right-0 {
     right: 0px;
   }
@@ -2200,10 +2228,6 @@ body {
 
   .sm\:text-left {
     text-align: left;
-  }
-
-  .data-\[state\=open\]\:sm\:slide-in-from-bottom-full[data-state=open] {
-    --tw-enter-translate-y: 100%;
   }
 }
 

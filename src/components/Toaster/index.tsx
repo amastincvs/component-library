@@ -33,7 +33,7 @@ function Toaster() {
           </Toast>
         )
       })}
-      <ToastViewport />
+      <ToastViewport position={toasts[0]?.position ?? 'default'} />
     </ToastProvider>
   )
 }
