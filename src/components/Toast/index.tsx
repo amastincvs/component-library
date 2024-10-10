@@ -5,19 +5,26 @@ import { IconX } from '@tabler/icons-react'
 import * as ToastPrimitives from '@radix-ui/react-toast'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-import { cn } from '../../lib/utils'
-import { ReactNode } from 'react'
+import { cn } from '~/lib/utils'
+
+const baseVariantClasses =
+  'group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full'
 
 const ToastProvider = ToastPrimitives.Provider
 
 const ToastViewport = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Viewport>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport> &
+    VariantProps<typeof toastVariants>
+>(({ className, variant, position, ...props }, ref) => (
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      'fixed bottom-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]',
+      'fixed z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:flex-col md:max-w-[420px]',
+      toastVariants({ variant: null, position }).replace(
+        baseVariantClasses,
+        ''
+      ),
       className
     )}
     {...props}
@@ -25,31 +32,36 @@ const ToastViewport = React.forwardRef<
 ))
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName
 
-const toastVariants = cva(
-  'group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
-  {
-    variants: {
-      variant: {
-        default: 'border bg-background',
-        destructive:
-          'destructive group border-destructive bg-destructive text-destructive-foreground'
-      }
+const toastVariants = cva(baseVariantClasses, {
+  variants: {
+    variant: {
+      default: 'border bg-background text-foreground',
+      destructive:
+        'destructive group border-destructive bg-destructive text-destructive-foreground'
     },
-    defaultVariants: {
-      variant: 'default'
+    position: {
+      default: 'top-0 sm:bottom-0 sm:right-0 sm:top-auto',
+      top: 'top-0 right-0 data-[state=closed]:!slide-out-to-right-full',
+      'top-left': 'top-0 left-0 data-[state=closed]:!slide-out-to-left-full',
+      bottom: 'bottom-0 right-0 data-[state=open]:!slide-in-from-bottom-full',
+      'bottom-left':
+        'data-[state=open]:!slide-in-from-bottom-full data-[state=closed]:!slide-out-to-left-full bottom-0 left-0'
     }
+  },
+  defaultVariants: {
+    variant: 'default'
   }
-)
+})
 
 const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
     VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+>(({ className, variant, position, ...props }, ref) => {
   return (
     <ToastPrimitives.Root
       ref={ref}
-      className={cn(toastVariants({ variant }), className)}
+      className={cn(toastVariants({ variant, position }), className)}
       {...props}
     />
   )
